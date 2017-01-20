@@ -13,6 +13,9 @@ class Point():
     dy = self.y - p2.y
     return (dx ** 2 + dy ** 2) ** .5
 
+# It's hard to reference the Point class inside itself
+# so let's attach ORIGIN to the Point class after it's
+# already been all defined.
 Point.ORIGIN = Point()
     
 # we can access ORIGIN through the Point class.
