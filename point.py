@@ -1,6 +1,4 @@
 class Point():
-  ORIGIN = Point()
-  
   def __init__(self, x=0, y=0):
     self.x = x
     self.y = y
@@ -8,10 +6,14 @@ class Point():
   def __str__(self):
     return "({},{})".format(self.x, self.y)
   
-  def distance(self, p2=Point.ORIGIN):
+  def distance(self, p2=None):
+    if p2 is None:
+      p2 = Point.ORIGIN
     dx = self.x - p2.x
     dy = self.y - p2.y
     return (dx ** 2 + dy ** 2) ** .5
+
+Point.ORIGIN = Point()
     
 # we can access ORIGIN through the Point class.
 print(Point.ORIGIN)
